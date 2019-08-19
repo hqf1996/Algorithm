@@ -16,11 +16,15 @@ public class BubbleSort {
         }
         for (int i = 0 ; i < a.length ; ++i){
             for (int j = 0 ; j < a.length-i-1 ; ++j){
-                if (a[j] > a[j+1]){
-                    int temp = a[j];
-                    a[j] = a[j+1];
-                    a[j+1] = temp;
-                }
+//                if (a[j] > a[j+1]){
+//                    int temp = a[j];
+//                    a[j] = a[j+1];
+//                    a[j+1] = temp;
+//                }
+                // 交换可用位运算
+                a[j] ^= a[j+1];
+                a[j+1] ^= a[j];
+                a[j] ^= a[j+1];
             }
         }
         return a;
