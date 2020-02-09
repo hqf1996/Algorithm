@@ -24,6 +24,7 @@ public class layerOrderTree {
 
     /**
      * 二叉树的层次遍历（要用到队列来做或者List也行，也就相当于图的bfs的做法）
+     *   这边有一个注意点在编码的时候经常容易犯错，就是node的判空，容易报空指针异常
      * @param pRoot
      */
     public void layerOrderTree1(TreeNode pRoot) {
