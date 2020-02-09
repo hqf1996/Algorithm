@@ -45,7 +45,7 @@ public class preOrderTree {
     }
 
     /**
-     * 二叉树前序遍历非递归实现（借助栈来实现，入栈需要先右子树，再左子树）
+     * 二叉树前序遍历非递归实现（借助栈来实现）
      * @param pRoot
      */
     public void preOrderTree2(TreeNode pRoot) {

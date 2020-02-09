@@ -46,7 +46,8 @@ public class postOrderTree {
         while (pRoot != null || !stack1.isEmpty()) {
             while (pRoot != null) {
                 stack1.push(pRoot);
-                stackLeftOrRight.push(1);  // 1表示左结点，2表示右节点
+                stackLeftOrRight.push(1);  // 1表示左结点，2表示右节点。也可以理解成1是还没有遍历过它的右子节点，
+                                                // 2是已经遍历过右子节点了，则可以弹出并打印。
                 pRoot = pRoot.left;
             }
             while (!stack1.isEmpty() && stackLeftOrRight.peek() == 2) {
@@ -65,18 +66,20 @@ public class postOrderTree {
     }
 
     /**
-     * 后序非递归的另一种实现方法
+     * 后序非递归的另一种实现方法（以根-右-左的顺序入栈，所以最后出栈的顺序就是左-右-根，
+     * 这种方法和前序中序的写法几乎一样，只不过左右子树入栈顺序反一下就可以了，很好记）
      * @param pRoot
      */
     public void postOrderTree3(TreeNode pRoot) {
         Stack<TreeNode> stack1 = new Stack<>();
         Stack<TreeNode> stack2 = new Stack<>();
         while (pRoot != null || !stack1.isEmpty()) {
-            if (pRoot != null) {
+            while (pRoot != null) {
                 stack1.push(pRoot);
                 stack2.push(pRoot);
                 pRoot = pRoot.right;
-            } else {
+            }
+            if (!stack1.isEmpty()) {
                 pRoot = stack1.pop();
                 pRoot = pRoot.left;
             }
@@ -106,8 +109,8 @@ public class postOrderTree {
         // 递归实现
 //        postTest.postOrderTree1(tree[0]);
         // 非递归实现
-        postTest.postOrderTree2(tree[0]);
-//        postTest.postOrderTree3(tree[0]);
+//        postTest.postOrderTree2(tree[0]);
+        postTest.postOrderTree3(tree[0]);
         System.out.println(sb.toString());
     }
 }
