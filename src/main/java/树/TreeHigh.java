@@ -36,7 +36,7 @@ public class TreeHigh {
     }
 
     /**
-     * 非递归写法
+     * 非递归写法（也就是层序遍历非递归的通常做法）
      * @param root 树根
      * @return
      */
