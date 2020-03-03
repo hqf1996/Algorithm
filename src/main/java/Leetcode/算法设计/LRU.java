@@ -100,7 +100,7 @@ public class LRU {
         if (map.containsKey(key)) {
             doubleList.remove(map.get(key));
             doubleList.addHeadNode(node);
-            map.put(key, node);
+            map.put(key, node);  //要更新，因为要考虑比如说(2,1)(2,2)的情况，更新成最新的node
         } else {
             // 已经满了
             if (cap == doubleList.size) {
@@ -114,14 +114,8 @@ public class LRU {
 
     public static void main(String[] args) {
         LRU lru = new LRU(3);
-        lru.put(1, 1);
+        lru.put(2, 1);
         lru.put(2, 2);
-        lru.get(1);
-        lru.put(3, 3);
         lru.get(2);
-        lru.put(4, 4);
-        lru.get(1);
-        lru.get(3);
-        lru.get(4);
     }
 }
