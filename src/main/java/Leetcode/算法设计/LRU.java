@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * @Author: hqf
- * @description: 用HashMap和双向链表实现一个LRU算法（最近最少使用算法）
+ * @description: 用HashMap和双向链表实现一个LRU算法（最近最少使用算法） 146
  * @Data: Create in 16:02 2020/3/3
  * @Modified By:
  */
