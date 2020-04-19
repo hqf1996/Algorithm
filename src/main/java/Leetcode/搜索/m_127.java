@@ -1,6 +1,7 @@
 package Leetcode.搜索;
 
 import java.util.*;
+import java.util.concurrent.SynchronousQueue;
 
 /**
  * @Author: hqf
