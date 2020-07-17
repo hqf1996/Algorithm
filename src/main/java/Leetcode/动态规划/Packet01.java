@@ -16,12 +16,12 @@ public class Packet01 {
         int[] val = new int[]{0, 8, 10, 6, 3, 7, 2};
         int[] weight = new int[]{0, 4, 6, 2, 2, 5, 1};
         int[][] dp = new int[N+1][W+1];
-        for (int i = 0 ; i <= W ; ++i) {
-            dp[0][i] = 0;
-        }
-        for (int i = 0 ; i <= N ; ++i) {
-            dp[i][0] = 0;
-        }
+//        for (int i = 0 ; i <= W ; ++i) {
+//            dp[0][i] = 0;
+//        }
+//        for (int i = 0 ; i <= N ; ++i) {
+//            dp[i][0] = 0;
+//        }
 
         for (int i = 1 ; i <= N ; ++i) {
             for (int w = 1 ; w <= W ; ++w) {
