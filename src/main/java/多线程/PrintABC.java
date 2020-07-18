@@ -39,9 +39,7 @@ class PrintThread implements Runnable {
             }
         }
     }
-}
 
-public class PrintABC {
     public static void main(String[] args) {
         PrintThread printThread1 = new PrintThread(0, "A");
         PrintThread printThread2 = new PrintThread(1, "B");
